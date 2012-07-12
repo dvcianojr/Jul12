@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>	//needed for MPMoviePlayerController
+#import <AudioToolbox/AudioToolbox.h>
 @class View;
 
 @interface Jul12AppDelegate: UIResponder <UIApplicationDelegate> {
@@ -19,6 +20,8 @@
 	NSURL *url2;
 	NSURL *url3;
 	NSURL *url4;
+	NSString *soundPath;
+	SystemSoundID clickButtonSoundID;
 }
 
 - (void) valueChanged: (id) sender;

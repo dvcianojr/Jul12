@@ -127,6 +127,11 @@
 	[self.window addSubview: view];
 	[self.window makeKeyAndVisible];
 	
+	//load click.wav
+	soundPath = [[NSBundle mainBundle] pathForResource:@"ButtonClick" ofType:@"wav"];			
+	AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &clickButtonSoundID);
+
+	
 	// take screenshot - currently remmed out since it was only needed for building app's icon 
 //		UIGraphicsBeginImageContext(self.window.bounds.size);
 //		[self.window.layer renderInContext: UIGraphicsGetCurrentContext()];
@@ -213,7 +218,7 @@
 
 - (void) touchUpInside0: (id) sender {
 	//sender is the button.
-	
+	AudioServicesPlaySystemSound (clickButtonSoundID);	
 	controller.view.frame = view.frame;
 	[view removeFromSuperview];
 	[controller setContentURL: url0];
@@ -226,6 +231,7 @@
 
 - (void) touchUpInside1: (id) sender {
 	//sender is the button.
+	AudioServicesPlaySystemSound (clickButtonSoundID);	
 	controller.view.frame = view.frame;
 	[view removeFromSuperview];
 	[controller setContentURL: url1];
@@ -237,6 +243,7 @@
 
 - (void) touchUpInside2: (id) sender {
 	//sender is the button.
+	AudioServicesPlaySystemSound (clickButtonSoundID);	
 	controller.view.frame = view.frame;
 	[view removeFromSuperview];
 	[controller setContentURL: url2];
@@ -248,6 +255,7 @@
 
 - (void) touchUpInside3: (id) sender {
 	//sender is the button.
+	AudioServicesPlaySystemSound (clickButtonSoundID);
 	controller.view.frame = view.frame;
 	[view removeFromSuperview];
 	[controller setContentURL: url3];
@@ -259,6 +267,7 @@
 
 - (void) touchUpInside4: (id) sender {
 	//sender is the button.
+	AudioServicesPlaySystemSound (clickButtonSoundID);	
 	controller.view.frame = view.frame;
 	[view removeFromSuperview];
 	[controller setContentURL: url4];
